@@ -2,3 +2,4 @@
 - [x] Build government-inspired landing page and shared navigation.
 - [x] Build dedicated detailed feature pages from proposal.
 - [x] Verify desktop/mobile layout and interactions.
+- [x] Remove competition and submission references from all visible ORCA copy and metadata, then verify.
