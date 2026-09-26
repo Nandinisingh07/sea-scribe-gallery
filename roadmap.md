@@ -1,4 +1,4 @@
 - [x] Review ORCA proposal and establish visual direction.
-- [ ] Build government-inspired landing page and shared navigation.
-- [ ] Build dedicated detailed feature pages from proposal.
+- [x] Build government-inspired landing page and shared navigation.
+- [x] Build dedicated detailed feature pages from proposal.
 - [ ] Verify desktop/mobile layout and interactions.
