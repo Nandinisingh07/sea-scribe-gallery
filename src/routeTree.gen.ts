@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AlertsRouteImport } from './routes/alerts'
+import { Route as AskRouteImport } from './routes/ask'
+import { Route as BoundariesRouteImport } from './routes/boundaries'
+import { Route as BriefingsRouteImport } from './routes/briefings'
+import { Route as ConditionsRouteImport } from './routes/conditions'
+import { Route as FishingZonesRouteImport } from './routes/fishing-zones'
+import { Route as RoutesRouteImport } from './routes/routes'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlertsRoute = AlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AskRoute = AskRouteImport.update({
+  id: '/ask',
+  path: '/ask',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoundariesRoute = BoundariesRouteImport.update({
+  id: '/boundaries',
+  path: '/boundaries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BriefingsRoute = BriefingsRouteImport.update({
+  id: '/briefings',
+  path: '/briefings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConditionsRoute = ConditionsRouteImport.update({
+  id: '/conditions',
+  path: '/conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FishingZonesRoute = FishingZonesRouteImport.update({
+  id: '/fishing-zones',
+  path: '/fishing-zones',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoutesRoute = RoutesRouteImport.update({
+  id: '/routes',
+  path: '/routes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/alerts': typeof AlertsRoute
+  '/ask': typeof AskRoute
+  '/boundaries': typeof BoundariesRoute
+  '/briefings': typeof BriefingsRoute
+  '/conditions': typeof ConditionsRoute
+  '/fishing-zones': typeof FishingZonesRoute
+  '/routes': typeof RoutesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/alerts': typeof AlertsRoute
+  '/ask': typeof AskRoute
+  '/boundaries': typeof BoundariesRoute
+  '/briefings': typeof BriefingsRoute
+  '/conditions': typeof ConditionsRoute
+  '/fishing-zones': typeof FishingZonesRoute
+  '/routes': typeof RoutesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/alerts': typeof AlertsRoute
+  '/ask': typeof AskRoute
+  '/boundaries': typeof BoundariesRoute
+  '/briefings': typeof BriefingsRoute
+  '/conditions': typeof ConditionsRoute
+  '/fishing-zones': typeof FishingZonesRoute
+  '/routes': typeof RoutesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/alerts'
+    | '/ask'
+    | '/boundaries'
+    | '/briefings'
+    | '/conditions'
+    | '/fishing-zones'
+    | '/routes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/alerts'
+    | '/ask'
+    | '/boundaries'
+    | '/briefings'
+    | '/conditions'
+    | '/fishing-zones'
+    | '/routes'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/alerts'
+    | '/ask'
+    | '/boundaries'
+    | '/briefings'
+    | '/conditions'
+    | '/fishing-zones'
+    | '/routes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AlertsRoute: typeof AlertsRoute
+  AskRoute: typeof AskRoute
+  BoundariesRoute: typeof BoundariesRoute
+  BriefingsRoute: typeof BriefingsRoute
+  ConditionsRoute: typeof ConditionsRoute
+  FishingZonesRoute: typeof FishingZonesRoute
+  RoutesRoute: typeof RoutesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alerts': {
+      id: '/alerts'
+      path: '/alerts'
+      fullPath: '/alerts'
+      preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ask': {
+      id: '/ask'
+      path: '/ask'
+      fullPath: '/ask'
+      preLoaderRoute: typeof AskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/boundaries': {
+      id: '/boundaries'
+      path: '/boundaries'
+      fullPath: '/boundaries'
+      preLoaderRoute: typeof BoundariesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/briefings': {
+      id: '/briefings'
+      path: '/briefings'
+      fullPath: '/briefings'
+      preLoaderRoute: typeof BriefingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conditions': {
+      id: '/conditions'
+      path: '/conditions'
+      fullPath: '/conditions'
+      preLoaderRoute: typeof ConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fishing-zones': {
+      id: '/fishing-zones'
+      path: '/fishing-zones'
+      fullPath: '/fishing-zones'
+      preLoaderRoute: typeof FishingZonesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/routes': {
+      id: '/routes'
+      path: '/routes'
+      fullPath: '/routes'
+      preLoaderRoute: typeof RoutesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AlertsRoute: AlertsRoute,
+  AskRoute: AskRoute,
+  BoundariesRoute: BoundariesRoute,
+  BriefingsRoute: BriefingsRoute,
+  ConditionsRoute: ConditionsRoute,
+  FishingZonesRoute: FishingZonesRoute,
+  RoutesRoute: RoutesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
