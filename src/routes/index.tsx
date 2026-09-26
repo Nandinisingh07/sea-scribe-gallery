@@ -7,7 +7,7 @@ import fishing from '../assets/orca-fishing.jpg'
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
     { title: 'ORCA — Ocean Intelligence for India’s Coasts' },
-    { name: 'description', content: 'Explore ORCA, an ocean intelligence concept bringing marine conditions, fishing information, safety alerts and coastal guidance into one accessible place.' },
+    { name: 'description', content: 'Explore ORCA, an ocean intelligence platform bringing marine conditions, fishing information, safety alerts and coastal guidance into one accessible place.' },
     { property: 'og:title', content: 'ORCA — Ocean Intelligence for India’s Coasts' },
     { property: 'og:description', content: 'Clearer ocean information for safer decisions at sea.' },
     { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
