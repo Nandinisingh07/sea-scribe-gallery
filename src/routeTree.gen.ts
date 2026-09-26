@@ -10,8 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AlertsRouteImport } from './routes/alerts'
 import { Route as AskRouteImport } from './routes/ask'
+import { Route as BoundariesRouteImport } from './routes/boundaries'
+import { Route as BriefingsRouteImport } from './routes/briefings'
 import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as FishingZonesRouteImport } from './routes/fishing-zones'
 import { Route as RoutesRouteImport } from './routes/routes'
@@ -19,6 +22,11 @@ import { Route as RoutesRouteImport } from './routes/routes'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AlertsRoute = AlertsRouteImport.update({
@@ -29,6 +37,16 @@ const AlertsRoute = AlertsRouteImport.update({
 const AskRoute = AskRouteImport.update({
   id: '/ask',
   path: '/ask',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoundariesRoute = BoundariesRouteImport.update({
+  id: '/boundaries',
+  path: '/boundaries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BriefingsRoute = BriefingsRouteImport.update({
+  id: '/briefings',
+  path: '/briefings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConditionsRoute = ConditionsRouteImport.update({
@@ -49,16 +67,22 @@ const RoutesRoute = RoutesRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/alerts': typeof AlertsRoute
   '/ask': typeof AskRoute
+  '/boundaries': typeof BoundariesRoute
+  '/briefings': typeof BriefingsRoute
   '/conditions': typeof ConditionsRoute
   '/fishing-zones': typeof FishingZonesRoute
   '/routes': typeof RoutesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/alerts': typeof AlertsRoute
   '/ask': typeof AskRoute
+  '/boundaries': typeof BoundariesRoute
+  '/briefings': typeof BriefingsRoute
   '/conditions': typeof ConditionsRoute
   '/fishing-zones': typeof FishingZonesRoute
   '/routes': typeof RoutesRoute
@@ -66,8 +90,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/alerts': typeof AlertsRoute
   '/ask': typeof AskRoute
+  '/boundaries': typeof BoundariesRoute
+  '/briefings': typeof BriefingsRoute
   '/conditions': typeof ConditionsRoute
   '/fishing-zones': typeof FishingZonesRoute
   '/routes': typeof RoutesRoute
@@ -75,14 +102,34 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/alerts' | '/ask' | '/conditions' | '/fishing-zones' | '/routes'
+    | '/'
+    | '/about'
+    | '/alerts'
+    | '/ask'
+    | '/boundaries'
+    | '/briefings'
+    | '/conditions'
+    | '/fishing-zones'
+    | '/routes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/alerts' | '/ask' | '/conditions' | '/fishing-zones' | '/routes'
+  to:
+    | '/'
+    | '/about'
+    | '/alerts'
+    | '/ask'
+    | '/boundaries'
+    | '/briefings'
+    | '/conditions'
+    | '/fishing-zones'
+    | '/routes'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/alerts'
     | '/ask'
+    | '/boundaries'
+    | '/briefings'
     | '/conditions'
     | '/fishing-zones'
     | '/routes'
@@ -90,8 +137,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AlertsRoute: typeof AlertsRoute
   AskRoute: typeof AskRoute
+  BoundariesRoute: typeof BoundariesRoute
+  BriefingsRoute: typeof BriefingsRoute
   ConditionsRoute: typeof ConditionsRoute
   FishingZonesRoute: typeof FishingZonesRoute
   RoutesRoute: typeof RoutesRoute
@@ -106,6 +156,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/alerts': {
       id: '/alerts'
       path: '/alerts'
@@ -118,6 +175,20 @@ declare module '@tanstack/react-router' {
       path: '/ask'
       fullPath: '/ask'
       preLoaderRoute: typeof AskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/boundaries': {
+      id: '/boundaries'
+      path: '/boundaries'
+      fullPath: '/boundaries'
+      preLoaderRoute: typeof BoundariesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/briefings': {
+      id: '/briefings'
+      path: '/briefings'
+      fullPath: '/briefings'
+      preLoaderRoute: typeof BriefingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/conditions': {
@@ -146,8 +217,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AlertsRoute: AlertsRoute,
   AskRoute: AskRoute,
+  BoundariesRoute: BoundariesRoute,
+  BriefingsRoute: BriefingsRoute,
   ConditionsRoute: ConditionsRoute,
   FishingZonesRoute: FishingZonesRoute,
   RoutesRoute: RoutesRoute,
